@@ -1,0 +1,59 @@
+﻿  BankProjectInOOP(course 11 ).cpp
+C:\MyCpp\clsDate.h(80,27): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsDate.h(543,9): warning C4101: 'dayOrder': unreferenced local variable
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsDate.h(563,9): warning C4101: 'dayOrder': unreferenced local variable
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(28,13): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(50,13): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(165,26): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(185,23): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(234,27): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(255,25): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(286,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\MyCpp\clsString.h(325,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsUser.h(203,14): warning C4091: 'static ': ignored on left of 'clsUser::enSaveResults' when no variable is declared
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(206,14): warning C4091: 'static ': ignored on left of 'clsBankClient::enSaveResults' when no variable is declared
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(263,22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(271,23): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsAddNewScreen.h(26,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsUpdateClientScreen.h(24,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsTotalBlanacesScreen.h(45,17): warning C4129: 'T': unrecognized character escape sequence
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsManageUserScreen.h(34,14): warning C4091: 'static ': ignored on left of 'clsManageUserScreen::enManageUserOption' when no variable is declared
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+  BankProjectInOOP(course 11 ).vcxproj -> C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\x64\Debug\BankProjectInOOP(course 11 ).exe
