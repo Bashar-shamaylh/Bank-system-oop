@@ -32,6 +32,7 @@ class clsLoginScreen :protected clsScreen
 			CurrentUser = clsUser::Find(userName, Password);
 			LoginFaild = CurrentUser.IsUserEmpty();
 		} while (LoginFaild);
+		clsMainScreen::ShowMainMenu();
 		return true;
 	}
 public:
