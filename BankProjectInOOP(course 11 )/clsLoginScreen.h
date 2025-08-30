@@ -32,28 +32,11 @@ class clsLoginScreen :protected clsScreen
 			CurrentUser = clsUser::Find(userName, Password);
 			LoginFaild = CurrentUser.IsUserEmpty();
 		} while (LoginFaild);
-		SaveLoginData();
+		CurrentUser.SaveLoginData();
 		clsMainScreen::ShowMainMenu();
 		return true;
 	}
-	static void SaveLoginData()
-	{
-		string date = clsDate::fromDateToString(clsDate::GetCurrentDate());
-		string time = clsUtility::CurrentTime();
-		string LoginRecord = CreateLoginRecord(date, time, CurrentUser.UserName, CurrentUser.Password, CurrentUser.Permissions);
-		fstream myfile;
-		myfile.open("Logs.txt", ios::out | ios::app);
-		if (myfile.is_open())
-		{
-			myfile << LoginRecord;
-			myfile << endl;
-			myfile.close();
-		}
-	}
-	static string CreateLoginRecord(string date, string time, string username, string password, int permissions, string seprator = "/##/")
-	{
-		return date + "-" + time + seprator + username + seprator + password + seprator + to_string(permissions);
-	}
+	
 public:
 	static	bool ShowLoginScreen()
 	{

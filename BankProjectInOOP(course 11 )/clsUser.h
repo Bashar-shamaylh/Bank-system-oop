@@ -9,12 +9,56 @@
 #include <string>
 class clsUser : public clsPerson
 {
+public:
+	static struct LoginInfo {
+		string date_time;
+		string userName;
+		string password;
+		int permission;
+	};
+private:
 	enum enMode { EmptyMode = 0, UpdateMode = 1, AddingMode = 2 };
 	enMode _Mode;
 	string _UserName;
 	string _Password;
 	int _Permissons;
 	bool _MarkToDelete = false;
+	static LoginInfo _ConverLoginInfoIntoLine(string line)
+	{
+		vector <string>tokens = clsString::split(line, "/##/");
+		LoginInfo info;
+		info.date_time = tokens.at(0);
+		info.userName = tokens.at(1);
+		info.password = tokens.at(2);
+		info.permission =stoi( tokens.at(3));
+		return info;
+	}
+	static vector<LoginInfo>_GetLogsRecords()
+	{
+		vector <LoginInfo>Logs;
+		fstream myfile;
+		myfile.open("Logs.txt", ios::in);
+		if (myfile.is_open())
+		{
+			string line;
+			while (getline(myfile, line))
+			{
+				
+				Logs.push_back(_ConverLoginInfoIntoLine(line));
+
+			}
+			myfile.close();
+		}
+		return Logs;
+
+	}
+	 string _CreateLoginRecord(string seprator = "/##/")
+	{
+		string date = clsDate::fromDateToString(clsDate::GetCurrentDate());
+		string time = clsUtility::CurrentTime();
+
+		return date + "-" + time + seprator + _UserName + seprator + _Password + seprator + to_string(_Permissons);
+	}
 	static clsUser ConvertLineToUserRecord(string Line, string Seperator = "/##/")
 	{
 		vector <string>tokens = clsString::split(Line, Seperator);
@@ -106,6 +150,7 @@ class clsUser : public clsPerson
 		}
 	}
 public:
+	
 	enum enPermissions {
 		eAll = -1, pListClients = 1, pAddNewClient = 2, pDeleteClient = 4,
 		pUpdateClients = 8, pFindClient = 16, pTranactions = 32, pManageUsers = 64
@@ -249,6 +294,24 @@ public:
 		else
 			return false;
 	}
+	  void SaveLoginData()
+	 {
+		 
+		 string LoginRecord = _CreateLoginRecord();
+		 fstream myfile;
+		 myfile.open("Logs.txt", ios::out | ios::app);
+		 if (myfile.is_open())
+		 {
+			 myfile << LoginRecord;
+			 myfile << endl;
+			 myfile.close();
+		 }
+	 }
+	 
+	  static vector<LoginInfo>GetLogsVector()
+	  {
+		  return _GetLogsRecords();
+		}
 	
 };
 
