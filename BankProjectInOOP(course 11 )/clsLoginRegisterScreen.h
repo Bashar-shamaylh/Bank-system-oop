@@ -18,6 +18,10 @@ class clsLoginRegisterScreen :protected clsScreen
 public :
 	static void ShowLoginRegisterScreen()
 	{
+        if (!CheckAccsessRights(clsUser::enPermissions::pLoginRegister))
+        {
+            return;
+        }
         vector <clsUser::LoginInfo> Logs = clsUser::GetLogsVector();
 		_DrawScreenHeader("Login Register",to_string(Logs.size()));
 		

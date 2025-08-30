@@ -64,6 +64,10 @@ class clsAddNewUser :protected clsScreen
         cin >> answer;
         if (answer == 'y' || answer == 'Y')
             permissions += clsUser::enPermissions::pManageUsers;
+        cout << "Do you want to give Login Register Permission?y,n : ";
+        cin >> answer;
+        if (answer == 'y' || answer == 'Y')
+            permissions += clsUser::enPermissions::pLoginRegister;
 
         return permissions;
     }
