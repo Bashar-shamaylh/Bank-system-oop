@@ -12,6 +12,7 @@
 #include "clsManageUserScreen.h"
 #include "clsLoginRegisterScreen.h"
 #include "Global.h"
+#include "clsCarrencyExchange.h"
 using namespace std;
 class clsMainScreen :protected clsScreen
 {
@@ -33,16 +34,17 @@ public:
 		clsUtility::PrintTaps(5); cout << "[6] Transactions." << endl;
 		clsUtility::PrintTaps(5); cout << "[7] Manege Users." << endl;
 		clsUtility::PrintTaps(5); cout << "[8] Login register." << endl;
-		clsUtility::PrintTaps(5); cout << "[9] Logout." << endl;
+		clsUtility::PrintTaps(5); cout << "[9] Currency Exchange." << endl;
+		clsUtility::PrintTaps(5); cout << "[10] Logout." << endl;
 		clsUtility::PrintSpaces(37); cout << "==================================================================" << endl;
 		_PerformMainMenuOption(enMainMenuOption (_ReadUserInput()));
 	}
 private:
 	enum enMainMenuOption{eListClientsi=1,eAddNewClient=2,eDelteClient=3
-		,eUpdateClient=4,eFindClient=5,eTransactions=6,eMangeUsers=7,eLoginRegester=8,eLogout=9};
+		,eUpdateClient=4,eFindClient=5,eTransactions=6,eMangeUsers=7,eLoginRegester=8,eCarrecyExchange=9,eLogout=10};
 	static short _ReadUserInput()
 	{
-		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [9]. ";
+		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [10]. ";
 		return clsInputValidate::ReadIntNumberBetween(1, 9);
 	}
 	static void _GoBackToMainMenu()
@@ -92,6 +94,13 @@ private:
 		clsLoginRegisterScreen::ShowLoginRegisterScreen();
 
 	}
+	static void _CarrencyExchange()
+	{
+		system("cls");
+		//clsLoginRegisterScreen::ShowLoginRegisterScreen();
+		clsCarrencyExchange::ShowCarrencyExchangeScreen();
+
+	}
 
 
 	static void _PerformMainMenuOption(enMainMenuOption option)
@@ -138,6 +147,10 @@ private:
 			_LoginRegester();
 			_GoBackToMainMenu();
 			break;
+		case clsMainScreen::eCarrecyExchange:
+			system("cls");
+			_CarrencyExchange();
+			_GoBackToMainMenu();
 		case clsMainScreen::eLogout:
 			system("cls");
 			CurrentUser = clsUser::Find("", "");

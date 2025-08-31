@@ -98,5 +98,17 @@
     <ClInclude Include="clsCurrency.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="clsCarrencyExchange.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsListCarrenciesScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsFindCarrency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsUpdateCarrencyRateScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

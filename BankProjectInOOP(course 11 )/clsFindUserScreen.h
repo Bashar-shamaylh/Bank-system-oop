@@ -21,7 +21,7 @@ class clsFindUserScreen :protected clsScreen
 public:
     static void ShowFindClientScreen()
     {
-        _DrawScreenHeader("Update User Screen");
+        _DrawScreenHeader("Find User Screen");
         string accountNum;
         cout << "plese enter User Name to look for : ";
         accountNum = clsInputValidate::ReadString();
