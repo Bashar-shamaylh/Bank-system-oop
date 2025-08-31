@@ -54,7 +54,7 @@ public:
             client.Transfer(amount, client1);
             PrintClientCard(client);
             PrintClientCard(client1);
-
+           
         }
         else
         {

@@ -38,13 +38,16 @@ C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course
 C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsUser.h(248,14): warning C4091: 'static ': ignored on left of 'clsUser::enSaveResults' when no variable is declared
   (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
   
-C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(206,14): warning C4091: 'static ': ignored on left of 'clsBankClient::enSaveResults' when no variable is declared
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(255,14): warning C4091: 'static ': ignored on left of 'clsBankClient::enSaveResults' when no variable is declared
   (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
   
-C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(263,22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(312,22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
   (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
   
-C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(271,23): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(320,23): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
+  
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(329,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
   
 C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsAddNewScreen.h(26,33): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
@@ -59,5 +62,5 @@ C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course
 C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsManageUserScreen.h(34,14): warning C4091: 'static ': ignored on left of 'clsManageUserScreen::enManageUserOption' when no variable is declared
   (compiling source file 'BankProjectInOOP(course%2011%20).cpp')
   
-C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(226,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
+C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\BankProjectInOOP(course 11 )\clsBankClient.h(275,1): warning C4715: 'clsBankClient::Save': not all control paths return a value
   BankProjectInOOP(course 11 ).vcxproj -> C:\Users\Basha\source\repos\BankProjectInOOP(course 11 )\x64\Debug\BankProjectInOOP(course 11 ).exe

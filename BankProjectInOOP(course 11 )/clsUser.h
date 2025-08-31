@@ -57,12 +57,12 @@ private:
 		string date = clsDate::fromDateToString(clsDate::GetCurrentDate());
 		string time = clsUtility::CurrentTime();
 
-		return date + "-" + time + seprator + _UserName + seprator + _Password + seprator + to_string(_Permissons);
+		return date + "-" + time + seprator + _UserName + seprator +clsUtility::EncryptText( _Password ,25)+ seprator + to_string(_Permissons);
 	}
 	static clsUser ConvertLineToUserRecord(string Line, string Seperator = "/##/")
 	{
 		vector <string>tokens = clsString::split(Line, Seperator);
-		return clsUser(enMode::UpdateMode, tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], stoi(tokens[6]));
+		return clsUser(enMode::UpdateMode, tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], clsUtility::DecryptText(tokens[5],25), stoi(tokens[6]));
 	}
 	string _ConvertUserRecordToLine(clsUser user, string Seprator = "/##/")
 	{
@@ -76,7 +76,7 @@ private:
 		text += Seprator;
 		text += user.UserName;
 		text += Seprator;
-		text += user.Password;
+		text += clsUtility::EncryptText(user.Password,25);
 		text += Seprator;
 
 		text += to_string(user.Permissions);

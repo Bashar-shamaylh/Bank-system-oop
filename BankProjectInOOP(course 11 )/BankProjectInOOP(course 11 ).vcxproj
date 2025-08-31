@@ -150,6 +150,7 @@
     <ClInclude Include="clsTotalBlanacesScreen.h" />
     <ClInclude Include="clsTransactionsScreen.h" />
     <ClInclude Include="clsTransfer.h" />
+    <ClInclude Include="clsTransferLogScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />
     <ClInclude Include="clsUpdateUserInfo.h" />
     <ClInclude Include="clsUser.h" />

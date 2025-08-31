@@ -8,7 +8,16 @@
 #include <vector>
 #include <string>
 class clsBankClient:public clsPerson
-{
+{public:
+	struct TransferLog {
+		string time;
+		string sourceAccountNum;
+		string destnationAccountNum;
+		double amount;
+		double sourceBalance;
+		double destBalance;
+		string User;
+	};
 
 private:
 	enum enMode{EmptyMode=0,UpdateMode=1,AddingMode=2};
@@ -17,6 +26,46 @@ private:
 	string _PinCode;
 	float _AccountBalance;
 	bool _MarkToDelete = false;
+	static TransferLog _ConverLoginInfoIntoLine(string line)
+	{
+		vector <string>tokens = clsString::split(line, "/##/");
+		TransferLog info;
+		info.time = tokens.at(0);
+		info.amount = stod(tokens.at(1));
+		info.sourceAccountNum = tokens.at(2);
+		info.destnationAccountNum = tokens.at(3);
+		
+		info.sourceBalance = stod(tokens.at(4));
+		info.destBalance = stod(tokens.at(5));
+		info.User = tokens.at(6);
+		return info;
+	}
+	static vector<TransferLog>_GetLogsRecords()
+	{
+		vector <TransferLog>Logs;
+		fstream myfile;
+		myfile.open("TransferLogs.txt", ios::in);
+		if (myfile.is_open())
+		{
+			string line;
+			while (getline(myfile, line))
+			{
+
+				Logs.push_back(_ConverLoginInfoIntoLine(line));
+
+			}
+			myfile.close();
+		}
+		return Logs;
+
+	}
+	string _CreateTransferRecord(int amount,clsBankClient DestentationClient, string seprator = "/##/")
+	{
+		string date = clsDate::fromDateToString(clsDate::GetCurrentDate());
+		string time = clsUtility::CurrentTime();
+
+		return date + "-" + time + seprator + to_string(amount)+seprator+_AccountNumber+ seprator +DestentationClient.getAccountNumber()+seprator+ to_string(_AccountBalance) + seprator +to_string(DestentationClient.accountBalance )+seprator+CurrentUser.UserName;
+	}
 	static clsBankClient ConvertLineToClientRecord(string Line, string Seperator="/##/")
 	{
 		vector <string>tokens = clsString::split(Line,Seperator);
@@ -277,9 +326,29 @@ public:
 		 if (Withdraw(Amount))
 		 {
 			 DestenationAccount.Deposite(Amount);
+			 SaveTransferData(Amount, DestenationAccount);
 			 return true;
 		 }
+
 		 return false;
+	 }
+	 void SaveTransferData(int amount,clsBankClient client)
+	 {
+
+		 string LoginRecord = _CreateTransferRecord(amount,client);
+		 fstream myfile;
+		 myfile.open("TransferLogs.txt", ios::out | ios::app);
+		 if (myfile.is_open())
+		 {
+			 myfile << LoginRecord;
+			 myfile << endl;
+			 myfile.close();
+		 }
+	 }
+	
+	 static vector<TransferLog>GetLogsVector()
+	 {
+		 return _GetLogsRecords();
 	 }
 };
 

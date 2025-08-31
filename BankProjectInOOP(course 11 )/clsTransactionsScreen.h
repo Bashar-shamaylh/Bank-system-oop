@@ -7,6 +7,7 @@
 #include "clsWithdraw.h"
 #include"clsTotalBlanacesScreen.h"
 #include "clsTransfer.h"
+#include "clsTransferLogScreen.h"
 using namespace std;
 
 class clsTransactionsScreen :protected clsScreen
@@ -29,6 +30,8 @@ public:
 		clsUtility::PrintTaps(5); cout << "[2] Withdraw." << endl;
 		clsUtility::PrintTaps(5); cout << "[3] Total Balances." << endl;
 		clsUtility::PrintTaps(5); cout << "[4] Transfer ." << endl;
+		clsUtility::PrintTaps(5); cout << "[5] Transfer Logs ." << endl;
+
 		clsUtility::PrintTaps(5); cout << "[5] Main Menu." << endl;
 	
 		clsUtility::PrintSpaces(37); cout << "==================================================================" << endl;
@@ -36,11 +39,11 @@ public:
 	}
 private:
 	enum enTransactionMenuOption {
-		eDeposite=1,eWithdraw=2,eShowTotalBalance=3,eTransfer=4,eLogout=5
+		eDeposite=1,eWithdraw=2,eShowTotalBalance=3,eTransfer=4,eTransferRegesters=5,eLogout=6
 	};
 	static short _ReadUserInput()
 	{
-		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [5]. ";
+		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [6]. ";
 		return clsInputValidate::ReadIntNumberBetween(1, 5);
 	}
 	static void _GoBackToTransactionMenu()
@@ -74,6 +77,12 @@ private:
 		clsTransfer::ShowTransferScreen();
 		_GoBackToTransactionMenu();
 	}
+	static void _ShowTransferRegisters()
+	{
+		system("cls");
+		clsTransferLogScreen::_ShowTranserLogsScreen();
+		_GoBackToTransactionMenu();
+	}
 
 	static void _PerformTransactionMenuOption(enTransactionMenuOption option)
 	{
@@ -99,11 +108,16 @@ private:
 			_ShowTransfer();
 			_GoBackToTransactionMenu();
 			break;
+		case clsTransactionsScreen::eTransferRegesters:
+			system("cls");
+			_ShowTransferRegisters();
+			_GoBackToTransactionMenu();
+			break;
 		case clsTransactionsScreen::eLogout:	
 			break;
 		default:
 			system("cls");
-			cout << "Plese Chose a valid option,from [1] to [4] . . .";
+			cout << "Plese Chose a valid option,from [1] to [6] . . .";
 			_GoBackToTransactionMenu();
 			break;
 		}

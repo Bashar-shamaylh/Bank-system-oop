@@ -4,6 +4,7 @@
 #include "clsUser.h"
 #include <iomanip>
 #include "clsInputValidate.h"
+#include "clsUtility.h"
 class clsLoginRegisterScreen :protected clsScreen
 {
     static void PrintLogsRecord(clsUser::LoginInfo record)
@@ -11,7 +12,7 @@ class clsLoginRegisterScreen :protected clsScreen
        
         cout << "| " << setw(15) << left <<record.date_time;
         cout << "| " << setw(20) << left << record.userName;
-        cout << "| " << setw(12) << left <<record.password;
+        cout << "| " << setw(12) << left <<clsUtility::DecryptText(record.password,25);
         cout << "| " << setw(12) << left << record.permission;
 
     }

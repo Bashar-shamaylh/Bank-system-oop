@@ -4,6 +4,7 @@
 #include "clsInputValidate.h"
 #include "clsMainScreen.h"
 #include "Global.h"
+#include "clsUtility.h"
 class clsLoginScreen :protected clsScreen
 {
 	static bool _Login()
