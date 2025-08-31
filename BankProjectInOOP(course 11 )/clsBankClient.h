@@ -272,5 +272,14 @@ public:
 		 Save();
 		 return true;
 	 }
+	 bool Transfer(double Amount, clsBankClient& DestenationAccount)
+	 {
+		 if (Withdraw(Amount))
+		 {
+			 DestenationAccount.Deposite(Amount);
+			 return true;
+		 }
+		 return false;
+	 }
 };
 

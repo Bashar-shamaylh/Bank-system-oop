@@ -6,6 +6,7 @@
 #include "clsDeposite.h"
 #include "clsWithdraw.h"
 #include"clsTotalBlanacesScreen.h"
+#include "clsTransfer.h"
 using namespace std;
 
 class clsTransactionsScreen :protected clsScreen
@@ -13,10 +14,10 @@ class clsTransactionsScreen :protected clsScreen
 public:
 	static void ShowTransactionMenue()
 	{
-		/*if (!CheckAccsessRights(clsUser::enPermissions::pTranactions))
+		if (!CheckAccsessRights(clsUser::enPermissions::pTranactions))
 		{
 			return;
-		}*/
+		};
 		system("cls");
 		_DrawScreenHeader("Transaction Screen");
 
@@ -27,19 +28,20 @@ public:
 		clsUtility::PrintTaps(5); cout << "[1] Deposite." << endl;
 		clsUtility::PrintTaps(5); cout << "[2] Withdraw." << endl;
 		clsUtility::PrintTaps(5); cout << "[3] Total Balances." << endl;
-		clsUtility::PrintTaps(5); cout << "[4] Main Menu." << endl;
+		clsUtility::PrintTaps(5); cout << "[4] Transfer ." << endl;
+		clsUtility::PrintTaps(5); cout << "[5] Main Menu." << endl;
 	
 		clsUtility::PrintSpaces(37); cout << "==================================================================" << endl;
 		_PerformTransactionMenuOption(enTransactionMenuOption(_ReadUserInput()));
 	}
 private:
 	enum enTransactionMenuOption {
-		eDeposite=1,eWithdraw=2,eShowTotalBalance=3,eLogout=4
+		eDeposite=1,eWithdraw=2,eShowTotalBalance=3,eTransfer=4,eLogout=5
 	};
 	static short _ReadUserInput()
 	{
-		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [4]. ";
-		return clsInputValidate::ReadIntNumberBetween(1, 8);
+		clsUtility::PrintTaps(5); cout << "Choose What do you want to do from [1] to [5]. ";
+		return clsInputValidate::ReadIntNumberBetween(1, 5);
 	}
 	static void _GoBackToTransactionMenu()
 	{
@@ -66,6 +68,13 @@ private:
 		clsTotalBlanacesScreen::ShowTotalBalances();
 		_GoBackToTransactionMenu();
 	}
+	static void _ShowTransfer()
+	{
+		system("cls");
+		clsTransfer::ShowTransferScreen();
+		_GoBackToTransactionMenu();
+	}
+
 	static void _PerformTransactionMenuOption(enTransactionMenuOption option)
 	{
 		switch (option)
@@ -83,6 +92,11 @@ private:
 		case clsTransactionsScreen::eShowTotalBalance:
 			system("cls");
 			_ShowTotalBalances();
+			_GoBackToTransactionMenu();
+			break;
+		case clsTransactionsScreen::eTransfer:
+			system("cls");
+			_ShowTransfer();
 			_GoBackToTransactionMenu();
 			break;
 		case clsTransactionsScreen::eLogout:	
