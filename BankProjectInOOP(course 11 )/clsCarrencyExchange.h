@@ -55,7 +55,7 @@ private:
 	{
 		//nothing here yet
 		//cout << "comgin soon !" << endl;
-		//clsUpdateCarrencyRateScreen::ShowUpdateCarrencyRateScreen();
+		clsUpdateCarrencyRateScreen::ShowUpdateCarrencyRateScreen();
 	}
 	static void _CarrencyCalculator()
 	{

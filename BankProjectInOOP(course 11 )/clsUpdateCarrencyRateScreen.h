@@ -2,6 +2,7 @@
 #include "clsScreen.h"
 #include "clsInputValidate.h"
 #include "clsCurrency.h"
+#include "iostream"
 class clsUpdateCarrencyRateScreen :protected clsScreen
 {
 	static void PrintCarrrencyCard(clsCurrency carrency)
@@ -13,12 +14,7 @@ class clsUpdateCarrencyRateScreen :protected clsScreen
 		cout << "Rate :" << carrency.CurrencyRate() << endl;
 		cout << "-------------------------" << endl;
 	}
-	void UpdateRate()
-	{
-		float newRate;
-		cout << "Enter new Rate : ";
-		cin >> newRate;
-	}
+	
 public:
 	static void ShowUpdateCarrencyRateScreen()
 	{
@@ -37,6 +33,7 @@ public:
 			PrintCarrrencyCard(currency);
 			cout << "Are you sure you want to update carrency rate?y,n";
 			char answer;
+			cin >> answer;
 			if (answer == 'y' || answer == 'Y')
 			{
 				float newRate;

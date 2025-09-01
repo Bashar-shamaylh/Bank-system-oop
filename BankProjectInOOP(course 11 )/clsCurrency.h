@@ -47,7 +47,7 @@ class clsCurrency
 		text += Seprator;
 		text += currency.CureencyCode();
 		text += Seprator;
-		text += currency.CurrencyRate();
+		text += to_string(currency.CurrencyRate());
 
 		return text;
 	}
