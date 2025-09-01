@@ -7,6 +7,7 @@
 #include "clsListCarrenciesScreen.h"
 #include "clsFindCarrency.h"
 #include "clsUpdateCarrencyRateScreen.h"
+#include "clsCurrencyCalculatorScreen.h"
 class clsCarrencyExchange :protected clsScreen
 {
 public:
@@ -60,7 +61,8 @@ private:
 	static void _CarrencyCalculator()
 	{
 		//nothing here yet
-		cout << "comgin soon !" << endl;
+		//cout << "comgin soon !" << endl;
+		clsCurrencyCalculatorScreen::ShowCalculatorScreen();
 	}
 
 	enum enCarrencyOption {

@@ -18,7 +18,7 @@ class clsCurrency
 	static clsCurrency _ConvertLineToCurrencyObject(string line,string Seperator="#//#")
 	{
 		vector <string>tokens = clsString::split(line, Seperator);
-		return clsCurrency(enMode::eUpdateMode, tokens[0], tokens[2],tokens[1] ,stof(tokens[3]));
+		return clsCurrency(enMode::eUpdateMode, tokens[0], tokens[1],tokens[2] ,stof(tokens[3]));
 }
 	static vector<clsCurrency> _LoadCurrencyFileIntoVector()
 	{
@@ -84,6 +84,9 @@ class clsCurrency
 
 	}
 public:
+	 enum eCurrencyExchangeOperation {
+		eFromUsdToCurrency=1,eFromCurrencyToUsd=2,eFromCurrencytoCurrency=3
+	};
 	clsCurrency(enMode mode,string CountryName, string CurrencyName, string CurrencyCode, float Rate)
 	{
 		_Mode = mode;
@@ -126,6 +129,7 @@ public:
 				if (clsString::upperAllString(currency.CureencyCode()) == (clsString::upperAllString(CurrencyCode)))
 				{
 					myfile.close();
+					
 					return currency;
 				}
 

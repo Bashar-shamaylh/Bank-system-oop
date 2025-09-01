@@ -1,7 +1,7 @@
 
 #include <iostream>
 using namespace std;
-
+#include "clsCurrency.h"
 #include "clsMainScreen.h"
 
 
@@ -15,6 +15,6 @@ int main()
             break;
 
     }
-   
+  
 }
 
